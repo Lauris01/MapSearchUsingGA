@@ -48,8 +48,8 @@ public class MyGdxGame extends Game {
 
     private Array<MapTile> createMapTiles(Map map) {
         Array<MapTile> mapTiles = new Array<>();
-        for (int i = 0; i < map.getMaxY(); i++) {
-            for (int j = 0; j < map.getMaxX(); j++) {
+        for (int i = 0; i < map.getMaxY()+1; i++) {
+            for (int j = 0; j < map.getMaxX()+1; j++) {
                 int o = map.maze[i][j];
                 if (o == MapVars.BLUE_BASE.value) {
                     mapTiles.add(new MapTile(MapVars.BLUE_BASE, i * tileSize, j * tileSize));
@@ -62,6 +62,9 @@ public class MyGdxGame extends Game {
                 }
                 if (o == MapVars.INVIS_FLOOR.value) {
                     mapTiles.add(new MapTile(MapVars.INVIS_FLOOR, i * tileSize, j * tileSize));
+                }
+                if (o == MapVars.WALL.value) {
+                    mapTiles.add(new MapTile(MapVars.WALL, i * tileSize, j * tileSize));
                 }
             }
 

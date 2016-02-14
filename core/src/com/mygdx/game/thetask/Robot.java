@@ -87,7 +87,7 @@ public class Robot {
      */
     public void stepMove() {
 
-        if (maxMoves < moves) {
+        if (maxMoves-1 < moves) {
             return;
         }
         int move = chromosome[moves];
@@ -156,14 +156,11 @@ public class Robot {
     }
 
     private void addVisibleMap() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Visible: \n");
         switch (getHeading()) {
             case NORTH:
                 for (int d = 1; d <= 3; d++) {
                     if (0 < (yPosition - d)) {
                         knownMap[xPosition][yPosition - d] = true;
-                        sb.append((xPosition) + ":" + (yPosition - d) + "\n");
                     }
                 }
                 break;
@@ -171,7 +168,6 @@ public class Robot {
                 for (int d = 1; d <= 3; d++) {
                     if (maze.getMaxX() > xPosition + d) {
                         knownMap[xPosition + d][yPosition] = true;
-                        sb.append((xPosition + d) + ":" + (yPosition) + "\n");
                     }
                 }
                 break;
@@ -180,7 +176,6 @@ public class Robot {
                 for (int d = 1; d <= 3; d++) {
                     if (maze.getMaxY() > (yPosition + d)) {
                         knownMap[xPosition][yPosition + d] = true;
-                        sb.append((xPosition) + ":" + (yPosition + d) + "\n");
                     }
 
                 }
@@ -189,12 +184,10 @@ public class Robot {
                 for (int d = 1; d <= 3; d++) {
                     if (0 < xPosition - d) {
                         knownMap[xPosition - d][yPosition] = true;
-                        sb.append((xPosition - d) + ":" + (yPosition) + "\n");
                     }
                 }
                 break;
         }
-//        System.out.println(sb.toString());
 
 
     }

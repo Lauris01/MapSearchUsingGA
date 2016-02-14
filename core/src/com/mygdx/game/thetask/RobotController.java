@@ -38,7 +38,7 @@ public class RobotController {
         Population population1 = ga.initPopulation(50);
         int generation = 1;
 
-        while (ga.isTerminationConditionMet(generation, maxGenerations) == false) {
+        while (!ga.isTerminationConditionMet(generation, maxGenerations)) {
             // print fittiest(best) individual from population
             Individual fittest = population.getFittest(0);
             Individual fittest1 = population1.getFittest(0);
@@ -68,6 +68,9 @@ public class RobotController {
         Robot bestRed = new Robot(fittestRed.getChromosome(), maze, 100, Robot.TYPE.RED);
         //go for challenge
         LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
+        config.height = 300;
+        config.width = 300;
+
         new LwjglApplication(new MyGdxGame(bestBlue, bestRed, maze), config);
 
     }
