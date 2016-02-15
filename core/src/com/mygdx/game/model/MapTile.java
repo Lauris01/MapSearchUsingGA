@@ -19,25 +19,25 @@ public class MapTile extends Entity {
     private void setupTexture() {
         switch (mapVar) {
             case INVIS_FLOOR:
-                texture = new Texture("invisible_floor.png");
+                texture = new Texture("core/assets/invisible_floor.png");
                 break;
             case VIS_FLOOR:
-                texture = new Texture("visible_floor.png");
+                texture = new Texture("core/assets/visible_floor.png");
                 break;
             case RED_ROB:
-                texture = new Texture("red_robbot.png");
+                texture = new Texture("core/assets/red_robbot.png");
                 break;
             case BLUE_ROB:
-                texture = new Texture("blue_robbot.png");
+                texture = new Texture("core/assets/blue_robbot.png");
                 break;
             case RED_BASE:
-                texture = new Texture("red_robbot_base.png");
+                texture = new Texture("core/assets/red_robbot_base.png");
                 break;
             case BLUE_BASE:
-                texture = new Texture("blue_robbot_base.png");
+                texture = new Texture("core/assets/blue_robbot_base.png");
                 break;
             case WALL:
-                texture = new Texture("wall.png");
+                texture = new Texture("core/assets/wall.png");
                 break;
         }
     }

@@ -93,10 +93,10 @@ public class MyGdxGame extends Game {
         batch.draw(robot1.getTexture(), robot1.robot.yPosition * tileSize, robot1.robot.xPosition * tileSize);
         //draw robot vision fields
         for (MapTile vision : robot.getVisibleTiles()) {
-            batch.draw(new Texture("vision_blue.png"), vision.getY(), vision.getX());
+            batch.draw(new Texture("core/assets/vision_blue.png"), vision.getY(), vision.getX());
         }
         for (MapTile vision : robot1.getVisibleTiles()) {
-            batch.draw(new Texture("vision_red.png"), vision.getY(), vision.getX());
+            batch.draw(new Texture("core/assets/vision_red.png"), vision.getY(), vision.getX());
         }
         batch.end();
 
