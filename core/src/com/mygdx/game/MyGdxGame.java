@@ -47,7 +47,7 @@ public class MyGdxGame extends Game {
     }
 
     private Array<MapTile> createMapTiles(Map map) {
-        Array<MapTile> mapTiles = new Array<>();
+        Array<MapTile> mapTiles = new Array<MapTile>();
         for (int i = 0; i < map.getMaxY()+1; i++) {
             for (int j = 0; j < map.getMaxX()+1; j++) {
                 int o = map.maze[i][j];

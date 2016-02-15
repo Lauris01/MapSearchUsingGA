@@ -20,7 +20,7 @@ public class RobotTile extends MapTile{
     }
 
     public Array<MapTile> getVisibleTiles() {
-        Array<MapTile> mapTiles = new Array<>();
+        Array<MapTile> mapTiles = new Array<MapTile>();
         for (Point p : robot.getVisionField()) {
             mapTiles.add(new MapTile(MapVars.VIS_FLOOR, p.getX() * 30, p.getY() * 30));
         }

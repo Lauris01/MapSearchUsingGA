@@ -20,7 +20,7 @@ public class Robot {
     private TYPE type;
     private int[] chromosome;
     boolean[][] knownMap = new boolean[10][10];
-    private ArrayList<Point> route = new ArrayList<>();
+    private ArrayList<Point> route = new ArrayList<Point>();
 
     /**
      * @param chromosome The string to map the sensor value to actions
@@ -203,7 +203,7 @@ public class Robot {
     }
 
     public ArrayList<Point> getVisionField() {
-        ArrayList<Point> result = new ArrayList<>();
+        ArrayList<Point> result = new ArrayList<Point>();
         switch (getHeading()) {
             case NORTH:
                 for (int d = 1; d <= 3; d++) {
