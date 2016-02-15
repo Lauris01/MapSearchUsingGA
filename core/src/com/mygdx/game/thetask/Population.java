@@ -27,14 +27,16 @@ public class Population {
     }
 
     public Individual getFittest(int offset) {
-        Arrays.sort(this.population, (o1, o2) -> {
-                if (o1.getFitness() < o2.getFitness()){
-                    return 1;
-                } else if (o1.getFitness() > o2.getFitness()) {
+               Arrays.sort(this.population, new Comparator<Individual>() {
+            @Override
+            public int compare(Individual o1, Individual o2) {
+                if (o1.getFitness() > o2.getFitness()) {
                     return -1;
+                } else if (o1.getFitness() < o2.getFitness()) {
+                    return 1;
                 }
-
-            return 0;
+                return 0;
+            }
         });
         return this.population[offset];
     }
